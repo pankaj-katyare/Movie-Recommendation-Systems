@@ -1,7 +1,6 @@
 from flask import Blueprint,render_template, redirect, url_for,request
-
-from .extensions import mongo 
-
+from flask_pymongo import PyMongo 
+mongo = PyMongo()
 main = Blueprint('main', __name__)
 
 @main.route('/')
