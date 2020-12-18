@@ -58,7 +58,5 @@ def logout():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    sess = Session()
-    sess.init_app(app)
     app.debug = TRUE
     app.run()
