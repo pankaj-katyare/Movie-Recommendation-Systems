@@ -4,6 +4,7 @@
 
 from flask import Blueprint,render_template,redirect,url_for,request,session,Flask
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_session import Session
 
 main = Blueprint('main', __name__)
 
@@ -58,4 +59,6 @@ def logout():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    sess = Session()
+    sess.init_app(app)
+    app.run(debug=True)
